@@ -10,5 +10,4 @@ require_once(APP_ROOT."/app/config/_env.php");
 
 require_once(APP_ROOT."/app/routing/router.php");
 
-
 ?>
