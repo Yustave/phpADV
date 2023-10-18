@@ -28,11 +28,10 @@ class Mail{
         $this->mail->FromName = "E-Commerce";
     }
 
-    public function send(){
-        $body = "To sign up for Gmail, create a Google Account. You can use the username and password to sign in to Gmail and other Google products like YouTube, Google Play, and Google Drive.";
-        $this->mail->addAddress("mizukiakaman@gmail.com","Yustave");
-        $this->mail->Subject = "Testing";
-        $this->mail->Body = $body;
+    public function send($data){
+        $this->mail->addAddress($data['to'],$data['to_name']);
+        $this->mail->Subject = $data['subject'];
+        $this->mail->Body = make($data['filename'],$data);
 
         return $this->mail->send();
     }

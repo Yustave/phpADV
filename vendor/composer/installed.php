@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => 'dev-10-10-2023',
-        'version' => 'dev-10-10-2023',
-        'reference' => 'ba09a7418a27bbea4d52bcc346764446b221aad8',
+        'pretty_version' => 'dev-10-12-2023',
+        'version' => 'dev-10-12-2023',
+        'reference' => '7d56bf0ad9802da63fbf5e1c1375898401ef17f7',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-10-10-2023',
-            'version' => 'dev-10-10-2023',
-            'reference' => 'ba09a7418a27bbea4d52bcc346764446b221aad8',
+            'pretty_version' => 'dev-10-12-2023',
+            'version' => 'dev-10-12-2023',
+            'reference' => '7d56bf0ad9802da63fbf5e1c1375898401ef17f7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -34,6 +34,15 @@
             'reference' => '4bd5c1cdfcd00e9e2d8c484f79150f67e5d355d9',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/inflector',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'filp/whoops' => array(
+            'pretty_version' => '2.15.3',
+            'version' => '2.15.3.0',
+            'reference' => 'c83e88a30524f9360b11f585f71e6b17313b7187',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

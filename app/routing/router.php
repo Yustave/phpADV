@@ -5,7 +5,11 @@ use function PHPSTORM_META\map;
 
 $router = new AltoRouter();
 $router->setBasePath("/E-commerce/public");
+
 $router->map("GET", "/", "App\Controllers\IndexController@show", "Home Route");
+
+$router->map("GET", "/admin/category", "App\Controllers\CategoryController@index", "Category create");
+$router->map("POST", "/admin/category", "App\Controllers\CategoryController@store", "Category home");
 
 new RouteDispacher($router)
 ?>
