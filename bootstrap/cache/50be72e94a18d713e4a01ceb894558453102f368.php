@@ -1,8 +1,8 @@
-<div class="container-fluid  bg-primary">
-    <nav class="container navbar navbar-expand-lg navbar-light bg-primary">
+<div class="container-fluid nav-color">
+    <nav class="container navbar navbar-expand-lg ">
     <div class="container-fluid">
-        <a class="navbar-brand english text-white" href="#">
-            <img src=<?php echo URL_ROOT."/assets/images/icon.png"?> alt="" style="width:5%">
+        <a class="navbar-brand english text-white" href="<?php echo URL_ROOT ?>">
+            <img src=<?php echo URL_ROOT."/assets/images/icon.jpg"?> alt="" style="width: 30px; height: 30px;">
             <span>Navbar</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,10 +11,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active english text-white"href="#">Home</a>
+            <a class="nav-link active english text-white"href="<?php echo URL_ROOT ?>">Home</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link english text-white" href="#">Features</a>
+            <a class="nav-link english text-white" href="admin">Admin Pannel</a>
             </li>
             <li class="nav-item">
             <a class="nav-link english text-white" href="#">Pricing</a>
