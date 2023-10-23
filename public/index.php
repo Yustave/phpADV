@@ -1,10 +1,14 @@
 <?php
 
+
+
 // use Whoops\Run;
 // use App\Classes\Mail;
 // use Whoops\Handler\PrettyPageHandler;
 
- require_once("../bootstrap/init.php");
+require_once("../bootstrap/init.php");
+
+
 // $whoops = new Run;
 // $whoops->pushHandler(new PrettyPageHandler);
 // $whoops->register();
