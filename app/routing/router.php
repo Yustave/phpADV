@@ -12,5 +12,7 @@ $router->map("GET", "/admin", "App\Controllers\AdminController@index", "Admin Ho
 $router->map("GET", "/admin/category/create", "App\Controllers\CategoryController@index", "Category create");
 $router->map("POST", "/admin/category/create", "App\Controllers\CategoryController@store", "Category home");
 
+
+
 new RouteDispacher($router)
 ?>

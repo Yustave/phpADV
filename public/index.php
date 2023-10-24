@@ -1,13 +1,30 @@
 <?php
-
-
-
 // use Whoops\Run;
 // use App\Classes\Mail;
 // use Whoops\Handler\PrettyPageHandler;
 
 require_once("../bootstrap/init.php");
+// use App\Classes\ValidateRequest;
+// $post = [
+//     "name"=>"Bruce Lee",
+//     "age"=>20,
+//     "email"=>"tester1@gmail.com"
+// ];
 
+// $policy = [
+//     "name" => ["string"=>true, "minLength"=>"5"],
+//     "age" => ["number"=>true, "minLength"=>"2"],
+//     "email"=> ["email"=>true, "maxLength"=> "25"]
+// ];
+
+// $validator = new ValidateRequest();
+// $validator->checkVaidate($post,$policy);
+
+// if($validator->hasError()) {
+//     beautify($validator->getErrors());
+// }else {
+//     echo "Good To Go!";
+// }
 
 // $whoops = new Run;
 // $whoops->pushHandler(new PrettyPageHandler);

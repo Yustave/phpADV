@@ -8,53 +8,69 @@
 }
 
 .bg-photo-home{
-    background-image:url("../images/bg_kda.png");
+    background-image:url("../images/kda_home_bg.jpg");
     height: 750px;
     background-size: cover;
 }
 
 .bg-photo-admin{
-    background-image:url("../images/ahri.jpg");
+    background-image:url("../images/kda_gp.jpg");
     height: 768px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-color: antiquewhite;
-    
+}
+
+.dp-btn{
+    background-image: url("../images/dp_icon.png");
+    background-size: cover;
+    background-position: center;
+    height: 60px;
+    margin-top: 50px;
+    width: 10vw;
+    margin-right: 20px;
+}
+
+.dp-btn li{
+    background-color: transparent !important;
+    border: none;
+}
+
+.dp-btn ul{
+    background-color: transparent !important;
+}
+
+.dp-btn a{
+    color: aquamarine;
+    text-decoration: none;
 }
 
 .bg-photo-create{
     background-image:url("../images/akali.png");
     height: 768px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: antiquewhite;
 }
 
 .nav-color{
     background-color: #abe8f3;;
+
 }
 
-.sidebar-btn{
-    background-image:url("../images/kda_icon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 20px;
-    width: 50px;
-    height: 50px;
-    border: 1px solid;
-    border-radius: 50%;
-} 
-
-.offcanvas-adminsideber{
-    background-color: #334346;
+.admin-list{
+    background-image: url('../images/kda_side_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    margin-right: 20px;
 }
-
 .admin-list li{
-    background-color: #334346 !important;
+    background-color: transparent !important;
+    border: none;
 }
 
 .admin-list li a{
-    color: white;
+    color: #abe8f3;
     text-decoration: none;
 }
 

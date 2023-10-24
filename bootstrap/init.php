@@ -19,4 +19,3 @@ require_once(APP_ROOT."/app/routing/router.php");
 
 // set_error_handler([new ErrorHandler,'handelErrors']);
 
-?>

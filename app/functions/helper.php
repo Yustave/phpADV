@@ -9,7 +9,7 @@ function view($path,$data = []){
 
     $blade = new Blade($view,$cache);
 
-    echo $blade->view()->make($path)->render();
+    echo $blade->view()->make($path,$data)->render();
 
 }
 

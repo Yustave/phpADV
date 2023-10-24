@@ -2,33 +2,60 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="bg-photo-create">
-    <div class="container" style="padding-top:40px;">
-        <h1 class="texr-primary text-center" style=" color:#abe8f3;">Create Category</h1>
-        <?php if(\App\Classes\Session::has("error")): ?>
-            <?php echo e(\App\Classes\Session::flash("error")); ?>
-
-        <?php endif; ?>
-        <div class="col-md-8 offset-md-2 my-5">
-            <form action="<?php echo URL_ROOT."admin/category/create"?>" method="post" enctype="multipart/form-data">
+   
+    <div class="container" style=" height: 768px; padding-top:40px; ">
+        <div class="row">
+            <div class="admin-list col-md-4">
+                <div class="my-5">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="admin/category/create">Category</a></li>
+                        <li class="list-group-item"><a href="admin/category/create">Category</a></li>
+                        <li class="list-group-item"><a href="admin/category/create">Category</a></li>
+                    </ul>
+                </div>
                 <div>
-                    <label for="name" class="form-label" style=" color:#abe8f3;">Name</label>
-                    <input type="text" id="name" class="form-control" name="name">
+                    <ul class="list-group my-5">
+                        <?php $__currentLoopData = $cats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li class="list-group-item">
+                            <a href="/admin/category/all"><?php echo e($cat->name); ?></a>
+                            <span>
+                                <i>edit</i>
+                                <i>delete</i>
+                            </span>
+                        </li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
                 </div>
-                
-                <div>
-                    <label for="file" class="form-label">File</label>
-                    <input type="file" id="file" class="form-control" name="file">
-                </div>
+            </div>
 
-                <input type="hidden" name="token" value="<?php echo e(\App\Classes\CSRFToken::_token()); ?>">
+            
+            <div class="col-md-4">
+                <h1 class="texr-primary text-center" style=" color:#abe8f3;">Create Category</h1>
+                <?php if(\App\Classes\Session::has("error")): ?>
+                    <?php echo e(\App\Classes\Session::flash("error")); ?>
 
-                <div class="row justify-content-end my-2">
-                    <button type='submit' class="btn btn-primary btn-sm">Create</button>
+                <?php endif; ?>
+                <div class="my-5">
+                    <div>
+                        <form action="<?php echo URL_ROOT."admin/category/create"?>" method="post" enctype="multipart/form-data">
+                            <div>
+                                <label for="name" class="form-label" style=" color:#abe8f3;">Name</label>
+                                <input type="text" id="name" class="form-control" name="name">
+                            </div>
+                            <input type="hidden" name="token" value="<?php echo e(\App\Classes\CSRFToken::_token()); ?>">
+                            <div class="row justify-content-end my-2">
+                                <button type='submit' class="btn btn-primary btn-sm">Create</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
+            </div>
+
+            
         </div>
     </div>
-</div>
+        
+
     
 <?php $__env->stopSection(); ?>
     
