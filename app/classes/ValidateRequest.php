@@ -7,6 +7,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 class ValidateRequest
 {
     private $errors = [];
+    
     private $error_messages = [
         "unique" => "The :attribute field is already in use!",
         "require" => "The :attribute field must be filled!",
@@ -115,7 +116,5 @@ class ValidateRequest
         return $this->errors;
     }
 }
-
-?>
 
 ?>

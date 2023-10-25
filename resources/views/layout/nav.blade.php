@@ -2,7 +2,7 @@
     <nav class="container navbar navbar-expand-lg ">
     <div class="container-fluid">
         <a class="navbar-brand english text-white" href="<?php echo URL_ROOT ?>">
-            <img src=<?php echo URL_ROOT."/assets/images/icon.jpg"?> alt="" style="width: 30px; height: 30px; border-radius: 50%">
+            <img src="<?php echo URL_ROOT."/assets/images/icon.jpg" ?>" alt="" style="width: 30px; height: 30px; border-radius: 50%">
             <span>Navbar</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

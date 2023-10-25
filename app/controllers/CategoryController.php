@@ -12,8 +12,9 @@ use App\Classes\ValidateRequest;
 class CategoryController extends BaseController{
     
     public function index(){
-        $cats = Category::all();
-        view("admin/category/create",compact('cats'));
+        $cate = Category::all()->count();
+        list($cats,$pages) = paginate(3,$cate,"categories");
+        view("admin/category/create",compact('cats','pages'));
     }
 
     public function store(){
@@ -25,9 +26,23 @@ class CategoryController extends BaseController{
             $validator = new ValidateRequest();
             $validator->checkVaidate($post,$rules);
             if($validator->hasError()){
-                print_r($validator->getErrors());
+                $cats = Category::all();
+                $errors = $validator->getErrors();
+                view("admin/category/create",compact('cats','errors'));
             }else{
-                echo "good";
+                $slug = slug($post->name);
+
+                $con = Category::create([
+                    "name" => $post->name,
+                    "slug" => $slug
+                    ]);
+                if($con){
+                    $cats = Category::all();
+                    $success = "Category Created";
+                    view("admin/category/create",compact('cats','success'));
+                }else{
+                    echo "fail";
+                }    
             }
             
         }else{
@@ -35,6 +50,15 @@ class CategoryController extends BaseController{
             Redirect::back();
         }
     }
-}
 
-?>
+    public function delete($id){
+        $con = Category::destroy($id);
+        if ($con) {
+            Session::flash("del_success", "Category deleted Successfully!");
+            Redirect::to(URL_ROOT."admin/category/create");
+        } else {
+            Session::flash("del_fail", "Category deletion failed! Try again.");
+            Redirect::to(URL_ROOT."admin/category/create");
+        }
+    }
+}

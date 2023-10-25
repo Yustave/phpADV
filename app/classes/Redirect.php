@@ -13,5 +13,3 @@ class Redirect{
         header("Location:$uri");
     }
 }
-
-?>

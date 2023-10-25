@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="shortcut icon" href="<?php echo URL_ROOT.'/assets/images/icon.jpg'?>">
-    <link rel="stylesheet" href="<?php echo URL_ROOT.'/assets/css/bootstap.min.css'?>">
-    <link rel="stylesheet" href="<?php echo URL_ROOT.'/assets/css/custom.css'?>">
+    <link rel="shortcut icon" href="<?php echo URL_ROOT.'/assets/images/icon.jpg';?> ">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.'/assets/css/bootstap.min.css';?> ">
+    <link rel="stylesheet" href="<?php echo URL_ROOT.'/assets/css/custom.css';?> ">
 </head>
 <body>
 

@@ -51,4 +51,3 @@ require_once("../bootstrap/init.php");
 // }else{
 //     echo "<br>fail";
 // }
-?>
