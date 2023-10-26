@@ -14,7 +14,7 @@
 }
 
 .bg-photo-admin{
-    background-image:url("../images/kda_gp.jpg");
+    background-image:url("../images/kda_admin_home_bg.jpg");
     height: 768px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -30,6 +30,13 @@
     margin-right: 20px;
 }
 
+.dp-content{
+    width: 15vw;
+    border: 0px;
+    transform: none !important;
+    right: 30;
+}
+
 .dp-btn li{
     background-color: transparent !important;
     border: none;
@@ -40,7 +47,7 @@
 }
 
 .dp-btn a{
-    color: aquamarine;
+    color:white;
     text-decoration: none;
 }
 
@@ -73,4 +80,37 @@
     color: #abe8f3;
     text-decoration: none;
 }
+
+.pagination li{
+    padding: 5px;
+    color: white;
+} 
+
+.sidebar_div{
+    padding-bottom: 30px;
+    border-bottom: 2px solid white;
+}
+
+.sidebar_list_1{
+    background-image: url('../images/sidebar_home_bg\(1\).jpg');
+    background-size: cover;
+    background-position: top;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sidebar_list_2{
+    background-image: url('../images/sidebar_home_bg\(2\).jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.sidebar div ul li{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
 

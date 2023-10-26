@@ -13,7 +13,8 @@ class CategoryController extends BaseController{
     
     public function index(){
         $cate = Category::all()->count();
-        list($cats,$pages) = paginate(3,$cate,"categories");
+        list($cats,$pages) = paginate(5,$cate, new Category());
+        $cats = json_decode(json_encode($cats));
         view("admin/category/create",compact('cats','pages'));
     }
 
@@ -21,7 +22,7 @@ class CategoryController extends BaseController{
         $post = Request::get("post");
         if(CSRFToken::checktoken($post->token)){
             $rules = [
-                "name"=> ["require"=>true,"minLength"=>"5","unique"=>"categories"]
+                "name"=> ["require"=>true,"minLength"=>"3","unique"=>"categories"]
             ];
             $validator = new ValidateRequest();
             $validator->checkVaidate($post,$rules);
@@ -39,7 +40,10 @@ class CategoryController extends BaseController{
                 if($con){
                     $cats = Category::all();
                     $success = "Category Created";
-                    view("admin/category/create",compact('cats','success'));
+                    $cate = Category::all()->count();
+                    list($cats,$pages) = paginate(5,$cate,new Category());
+                    $cats = json_decode(json_encode($cats));
+                    view("admin/category/create",compact('cats','success','pages'));
                 }else{
                     echo "fail";
                 }    
@@ -61,4 +65,33 @@ class CategoryController extends BaseController{
             Redirect::to(URL_ROOT."admin/category/create");
         }
     }
+
+    public function update(){
+        $post = Request::get('POST');
+
+        if(CSRFToken::checkToken($post->token)) {
+
+            $rules = [
+                "name" => ["require"=>true, "minLength"=>"3", "unique"=>"categories"]
+            ];
+
+            $validator = new ValidateRequest();
+            $validator->checkVaidate($post, $rules);
+
+            if($validator->hasError()) {
+                header('HTTP/1.1 422 Validation Error!', true, 422);
+                $errors = $validator->getErrors();
+                echo json_encode($errors);
+                
+            }else {
+                Category::where("id", $post->id)->update(["name"=>$post->name]);
+                echo json_encode("Category Updated Successfully");
+                
+            }
+        }else {
+            header('HTTP/1.1 422 Token Mix-Match Error!', true, 422);
+            echo json_encode(["error" => "Token Mix-Match Error!"]);
+            
+        }
+    }    
 }

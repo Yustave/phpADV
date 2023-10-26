@@ -3,6 +3,8 @@
 
 @section('content')
     <div class="bg-photo-admin">
-        @include('layout.admin_sidebar')
+        <div class="sidebar_div">
+            @include('layout.admin_sidebar')
+        </div>
     </div>
 @endsection
