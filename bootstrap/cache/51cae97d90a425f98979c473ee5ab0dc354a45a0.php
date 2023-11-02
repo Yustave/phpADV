@@ -22,7 +22,7 @@
                         <li class="list-group-item d-flex justify-content-between">
                             <a href="/admin/category/all"><?php echo e($cat->name); ?></a>
                             <span>
-                                <i class="fa fa-plus text-primary" id="plus" onclick="showSubModal('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')">Sub</i>
+                                <i class="fa fa-plus text-primary" onclick="showSubModal('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')">Sub</i>
                                 <i class="bg-danger" onclick="fun('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')" id="editor">edit</i>
                                 <a href="<?php echo URL_ROOT."admin/category/".$cat->id."/delete"?>"><i class="bg-danger">delete</i></a>
                             </span>

@@ -20,37 +20,6 @@
     background-repeat: no-repeat;
 }
 
-.dp-btn{
-    background-image: url("../images/dp_icon.png");
-    background-size: cover;
-    background-position: center;
-    height: 60px;
-    margin-top: 50px;
-    width: 10vw;
-    margin-right: 20px;
-}
-
-.dp-content{
-    width: 15vw;
-    border: 0px;
-    transform: none !important;
-    right: 30;
-}
-
-.dp-btn li{
-    background-color: transparent !important;
-    border: none;
-}
-
-.dp-btn ul{
-    background-color: transparent !important;
-}
-
-.dp-btn a{
-    color:white;
-    text-decoration: none;
-}
-
 .bg-photo-create{
     background-image:url("../images/akali.png");
     height: 768px;
@@ -86,34 +55,37 @@
     color: white;
 } 
 
-.sidebar_div{
-    padding-bottom: 30px;
-    border-bottom: 2px solid white;
-}
-
 .sidebar_list_1{
-    background-image: url('../images/sidebar_home_bg\(1\).jpg');
-    background-size: cover;
-    background-position: top;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 50px;
+    width: 20vw;
+    text-align: center;
+    padding: 15px 5px;
+    border: 0.5px solid;
+    border-color: aqua;
+    border-radius: 5%;
+    text-decoration: none;
 }
 
 .sidebar_list_2{
-    background-image: url('../images/sidebar_home_bg\(2\).jpg');
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 10px;
-}
-
-.sidebar div ul li{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    height: 50px;
+    width: 20vw;
     text-align: center;
+    padding: 15px 5px;
+    border: 0.5px solid;
+    border-color: aqua;
+    border-radius: 5%;
+    text-decoration: none;
 }
 
 .sub-cate{
     background-color: black;
+}
+
+.product-ad-home{
+    background-image: url("../images/KDA_ahri_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 700px;
 }
 
 

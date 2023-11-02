@@ -24,7 +24,7 @@
                         <li class="list-group-item d-flex justify-content-between">
                             <a href="/admin/category/all">{{$cat->name}}</a>
                             <span>
-                                <i class="fa fa-plus text-primary" id="plus" onclick="showSubModal('{{$cat->name}}','{{$cat->id }}')">Sub</i>
+                                <i class="fa fa-plus text-primary" onclick="showSubModal('{{$cat->name}}','{{$cat->id }}')">Sub</i>
                                 <i class="bg-danger" onclick="fun('{{$cat->name}}','{{$cat->id }}')" id="editor">edit</i>
                                 <a href="<?php echo URL_ROOT."admin/category/".$cat->id."/delete"?>"><i class="bg-danger">delete</i></a>
                             </span>

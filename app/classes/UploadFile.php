@@ -4,9 +4,10 @@ namespace App\Classes;
 
 use App\Classes\Session;
 
-class UpdateFile{
+class UploadFile{
     
     protected $maxsize = 241020;
+    protected $path;
 
     public function setname($file,$name = ""){
         if($name === ""){
@@ -30,6 +31,10 @@ class UpdateFile{
         return in_array($ext, $validExt);
     }
 
+    public function getPath(){
+        return  $this->path;
+    }
+
     public function move($file){
         $name = $this->setname($file);
 
@@ -39,6 +44,7 @@ class UpdateFile{
                     if (!is_dir($path)){
                         mkdir($path);
                     }
+                    $this->path = URL_ROOT."/public/assets/uploads/". $name;
                     $file_path = $path . $name;
                     return move_uploaded_file($file->file->tmp_name,$file_path);
             }else{
