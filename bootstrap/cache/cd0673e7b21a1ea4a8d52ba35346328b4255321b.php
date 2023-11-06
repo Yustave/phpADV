@@ -1,9 +1,13 @@
 <?php $__env->startSection('title','Admin Pannel'); ?>
 
 <?php $__env->startSection('content'); ?>
-<div class="product-ad-home">
+<div class="product-ad-create">
     <div class="container">
         <div class="row offset-md-0.5">
+            <?php if(\App\Classes\Session::has("error")): ?>
+                <?php echo e(\App\Classes\Session::flash("error")); ?>
+
+            <?php endif; ?>
             <div class="col-md-5">
                 <?php echo $__env->make("layout.report_message", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                 <form class="p-5" action="<?php echo URL_ROOT.'admin/product/create'?>" method="post" enctype="multipart/form-data">
@@ -56,7 +60,8 @@
                     <input class="btn btn-primary" type="submit" value="Submit">
                 </form>
             </div>
-            <div class="col-md-7">
+
+            <div class="col-md-7">   
                 
             </div>
         </div>

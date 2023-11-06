@@ -9,20 +9,20 @@
 
 .bg-photo-home{
     background-image:url("../images/kda_home_bg.jpg");
-    height: 750px;
+    height: auto;
     background-size: cover;
 }
 
 .bg-photo-admin{
     background-image:url("../images/kda_admin_home_bg.jpg");
-    height: 768px;
+    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .bg-photo-create{
     background-image:url("../images/akali.png");
-    height: 768px;
+    height: auto;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: antiquewhite;
@@ -37,7 +37,7 @@
     background-image: url('../images/kda_side_bg.jpg');
     background-size: cover;
     background-position: center;
-    height: 700px;
+    height: auto;
     margin-right: 20px;
 }
 .admin-list li{
@@ -81,11 +81,18 @@
     background-color: black;
 }
 
+.product-ad-create{
+    background-image: url("../images/KDA_ahri_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+
 .product-ad-home{
     background-image: url("../images/KDA_ahri_bg.jpg");
     background-size: cover;
     background-position: center;
-    height: 700px;
+    height: auto;
 }
 
 

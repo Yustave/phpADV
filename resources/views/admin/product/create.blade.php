@@ -2,9 +2,12 @@
 @section('title','Admin Pannel')
 
 @section('content')
-<div class="product-ad-home">
+<div class="product-ad-create">
     <div class="container">
         <div class="row offset-md-0.5">
+            @if (\App\Classes\Session::has("error"))
+                {{\App\Classes\Session::flash("error")}}
+            @endif
             <div class="col-md-5">
                 @include("layout.report_message")
                 <form class="p-5" action="<?php echo URL_ROOT.'admin/product/create'?>" method="post" enctype="multipart/form-data">
@@ -57,7 +60,8 @@
                     <input class="btn btn-primary" type="submit" value="Submit">
                 </form>
             </div>
-            <div class="col-md-7">
+
+            <div class="col-md-7">   
                 
             </div>
         </div>

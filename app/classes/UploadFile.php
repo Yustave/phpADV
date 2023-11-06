@@ -6,7 +6,7 @@ use App\Classes\Session;
 
 class UploadFile{
     
-    protected $maxsize = 241020;
+    protected $maxsize = 2410202020;
     protected $path;
 
     public function setname($file,$name = ""){
@@ -40,11 +40,8 @@ class UploadFile{
 
         if($this->isImage($file)){
             if($this->checksize($file)){
-                $path = APP_ROOT."/public/assets/uploads/";
-                    if (!is_dir($path)){
-                        mkdir($path);
-                    }
-                    $this->path = URL_ROOT."/public/assets/uploads/". $name;
+                $path = APP_ROOT."\public\assets\uploads/";
+                    $this->path = URL_ROOT."assets/uploads/". $name;
                     $file_path = $path . $name;
                     return move_uploaded_file($file->file->tmp_name,$file_path);
             }else{
