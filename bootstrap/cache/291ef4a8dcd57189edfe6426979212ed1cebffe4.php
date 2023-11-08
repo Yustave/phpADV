@@ -2,7 +2,15 @@
 
 <?php $__env->startSection('content'); ?>
 <div class="product-ad-home">
+
+   
+
     <?php echo $__env->make('layout.admin_sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <?php if(\App\Classes\Session::has("error")): ?>
+        <?php echo e(\App\Classes\Session::flash("error")); ?>
+
+    <?php endif; ?>
 
     <div class="container">
         <div class="row">
@@ -46,12 +54,12 @@
                                 <img src="<?php echo e($product->image); ?>" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo e($product->name); ?></h5>
-                                    <p class="card-text"><?php echo e($product->description); ?></p>
+                                    <p class="card-text">Price $<?php echo e($product->price); ?></p>
                                     <span class="float-end">
                                         <a href="<?php echo URL_ROOT."admin/product/".$product->id."/edit"; ?>"; >
                                             <i class="fa fa-trash text-warning">edit</i>
                                         </a>
-                                        <a href="#"; >
+                                        <a href="<?php echo URL_ROOT."admin/product/".$product->id."/delete"; ?>"; >
                                             <i class="fa fa-trash text-danger">delete</i>
                                         </a>
                                     </span>

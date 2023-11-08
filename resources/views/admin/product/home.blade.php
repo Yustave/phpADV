@@ -3,7 +3,14 @@
 
 @section('content')
 <div class="product-ad-home">
+
+   
+
     @include('layout.admin_sidebar')
+
+    @if (\App\Classes\Session::has("error"))
+        {{\App\Classes\Session::flash("error")}}
+    @endif
 
     <div class="container">
         <div class="row">
@@ -45,12 +52,12 @@
                                 <img src="{{$product->image}}" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$product->name}}</h5>
-                                    <p class="card-text">{{$product->description}}</p>
+                                    <p class="card-text">Price ${{$product->price}}</p>
                                     <span class="float-end">
                                         <a href="<?php echo URL_ROOT."admin/product/".$product->id."/edit"; ?>"; >
                                             <i class="fa fa-trash text-warning">edit</i>
                                         </a>
-                                        <a href="#"; >
+                                        <a href="<?php echo URL_ROOT."admin/product/".$product->id."/delete"; ?>"; >
                                             <i class="fa fa-trash text-danger">delete</i>
                                         </a>
                                     </span>

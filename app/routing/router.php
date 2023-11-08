@@ -40,7 +40,7 @@ $router->map("GET", "/", "App\Controllers\IndexController@show","Home Route");
 
     $router->map("POST", "/admin/product/[i:id]/edit", "App\Controllers\ProductController@update","Product Update");
 
-    
+    $router->map("GET", "/admin/product/[i:id]/delete", "App\Controllers\ProductController@delete","Product Delete");    
 # Product End
 
 new RouteDispacher($router);

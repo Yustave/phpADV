@@ -166,4 +166,15 @@ class ProductController extends BaseController{
             Redirect::to("/E-Commerce/public/admin/product/".$id."/edit");
         }
     }
+
+    public function delete($id){
+        $con = Product::destroy($id);
+        if($con) {
+            Session::flash("product_delete_success", "Product Delete Successfully");
+            Redirect::to("/E-Commerce/public/admin/product/home");
+        } else {
+            Session::flash("product_delete_fail" , "Product not Deleted!");
+            Redirect::to("/E-Commerce/public/admin/product/home");
+        }
+    }
 }

@@ -10,34 +10,41 @@
                         <div>
                             <ul class="list-group my-5">
                                 <?php $__currentLoopData = $cats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <a href="/admin/category/all"><?php echo e($cat->name); ?></a>
-                                    <span>
-                                        <i class="fa fa-plus text-primary" onclick="showSubModal('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')">Sub</i>
-                                        <i class="bg-danger" onclick="fun('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')" id="editor">edit</i>
-                                        <a href="<?php echo URL_ROOT."admin/category/".$cat->id."/delete"?>"><i class="bg-danger">delete</i></a>
-                                    </span>
-                                </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <a href="#" class="main_cate"><?php echo e($cat->name); ?></a>
+                                        <span>
+                                            <a href="#" id="showCat" class="display_subcate text-primary" onclick="showCategory(<?php echo e($cat->id); ?>)">
+                                                Open
+                                            </a>
+                                            <i class="fa fa-plus text-primary" onclick="showSubModal('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')">
+                                                Sub
+                                            </i>
+                                            <i class="bg-danger" onclick="fun('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')" id="editor">
+                                                edit
+                                            </i>
+                                            <a href="<?php echo URL_ROOT."admin/category/".$cat->id."/delete"?>">
+                                                <i class="bg-danger">delete</i>
+                                            </a>
+                                        </span>
+                                    </li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                             <?php echo $pages; ?>
 
                         </div>
                     <!-- Category List End -->
-
+                    <input type="hidden" class="category-id-input" id="category-id-input" name="cat_id">
                     <!-- SubCategory List Start -->
-                        <div>
-                            <ul class="list-group mt-5">
+                        <div class="subCategory" id="subCategory">
+                            <ul class="list-group">
                                 <?php $__currentLoopData = $sub_cats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <li class="list-group-item">
-                                    <a href="<?php echo URL_ROOT . 'admin/category/all'; ?>" style="text-decoration: none;color:darkblue;"><?php echo e($category->name); ?></a>
+                                    <a href="<?php echo URL_ROOT . 'admin/category/all'; ?>"  style="text-decoration: none;color:darkblue;"><?php echo e($category->name); ?></a>
                                     <span class="float-end">
-
                                         <i class="fa fa-edit text-warning" onclick="subCatEdit('<?php echo e($category->name); ?>','<?php echo e($category->id); ?>')" id="editor">edit</i>
-
                                         <a href="<?php echo URL_ROOT . "admin/subcategory/$category->id/delete"; ?>">
                                             <i class="fa fa-trash text-danger">delete</i>
-                                        </a>
+                                        </a> 
                                     </span>
                                 </li>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -195,6 +202,7 @@
 
 <?php $__env->startSection('script'); ?>
         <script>
+            
             function fun(name,id){
                 $("#edit-name").val(name);
                 $("#edit-id").val(id);
@@ -300,6 +308,20 @@
                     }
                 });
             }
+
+            function showCategory(id) {
+                var content = document.getElementById("subCategory" +id);
+                // Update the category ID in the hidden input field
+                console.log(id)
+                // if (content.style.display === "none") {
+                //     content.style.display = "block"
+                // } else {
+                //     content.style.display = "none"
+                // }
+
+                document.getElementById('category-id-input').value = id
+            }
+
         </script>
 <?php $__env->stopSection(); ?>
 
