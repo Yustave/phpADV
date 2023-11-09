@@ -83,6 +83,14 @@ class SubCategoryController extends BaseController{
             Redirect::to("/E-Commerce/public/admin/category/create");
         }
     }
+
+    public function getSubcategories($id){
+        $subcategories = SubCategory::where('cat_id', $id)->get();
+
+        header('Content-Type: application/json');
+        echo json_encode($subcategories);
+    }
+    
 }
 
 ?>

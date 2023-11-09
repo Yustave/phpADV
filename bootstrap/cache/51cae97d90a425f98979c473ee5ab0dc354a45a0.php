@@ -11,11 +11,9 @@
                             <ul class="list-group my-5">
                                 <?php $__currentLoopData = $cats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li class="list-group-item d-flex justify-content-between">
-                                        <a href="#" class="main_cate"><?php echo e($cat->name); ?></a>
+                                    <a href="<?php echo URL_ROOT .'admin/category/create'; ?>" class="main_cate"><?php echo e($cat->name); ?></a>
                                         <span>
-                                            <a href="#" id="showCat" class="display_subcate text-primary" onclick="showCategory(<?php echo e($cat->id); ?>)">
-                                                Open
-                                            </a>
+                                            <a class="text=primary" href="#" onclick="showCategory('<?php echo e($cat->id); ?>')">Open<ai>
                                             <i class="fa fa-plus text-primary" onclick="showSubModal('<?php echo e($cat->name); ?>','<?php echo e($cat->id); ?>')">
                                                 Sub
                                             </i>
@@ -33,7 +31,7 @@
 
                         </div>
                     <!-- Category List End -->
-                    <input type="hidden" class="category-id-input" id="category-id-input" name="cat_id">
+
                     <!-- SubCategory List Start -->
                         <div class="subCategory" id="subCategory">
                             <ul class="list-group">
@@ -310,16 +308,15 @@
             }
 
             function showCategory(id) {
-                var content = document.getElementById("subCategory" +id);
-                // Update the category ID in the hidden input field
-                console.log(id)
-                // if (content.style.display === "none") {
-                //     content.style.display = "block"
-                // } else {
-                //     content.style.display = "none"
-                // }
 
-                document.getElementById('category-id-input').value = id
+                var content = document.getElementById("subCategory");
+
+                if (content.style.display === "none") {
+                    content.style.display = "block"
+                } else {
+                    content.style.display = "none"
+                }
+
             }
 
         </script>

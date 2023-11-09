@@ -16,6 +16,6 @@ class AdminController{
         $sub_cats = json_decode(json_encode($sub_cats));
         view("admin/home", compact('cats', 'pages', 'sub_cats', 'sub_pages'));
     }
-}
+};
 
 ?>

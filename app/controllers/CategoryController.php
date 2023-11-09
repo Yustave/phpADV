@@ -20,6 +20,7 @@ class CategoryController extends BaseController{
         $subcategories = SubCategory::all()->count();
         list($sub_cats,$sub_pages) = paginate(3, $subcategories, new SubCategory());
         $sub_cats = json_decode(json_encode($sub_cats));
+        
         view("admin/category/create", compact('cats', 'pages', 'sub_cats', 'sub_pages'));
     }
 

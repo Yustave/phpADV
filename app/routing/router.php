@@ -26,6 +26,9 @@ $router->map("GET", "/", "App\Controllers\IndexController@show","Home Route");
 
     $router->map("GET", "/admin/subcategory/[i:id]/delete", "App\Controllers\SubCategoryController@delete","SubCategory Delete");
 
+    $router->map("GET", "/admin/getSubcategories/[i:id]", "App\Controllers\SubCategoryController@getSubcategories", "Get Subcategories");
+
+
 # Category End
 
 # Product Start
@@ -42,6 +45,10 @@ $router->map("GET", "/", "App\Controllers\IndexController@show","Home Route");
 
     $router->map("GET", "/admin/product/[i:id]/delete", "App\Controllers\ProductController@delete","Product Delete");    
 # Product End
+
+
+    $router->map("GET", "/admin/product/[i:id]/detail", "App\Controllers\IndexController@productDetail","Product Deatil");
+
 
 new RouteDispacher($router);
 ?>
